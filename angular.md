@@ -101,6 +101,9 @@
 
 #### 扩展小知识
 
+- todomvc demo
+- track by $index 解决ng-repeat 遍历数组时有重复问题
+- 
 - 在线编辑器
     + ```http://codepen.io/```
     + ```https://jsfiddle.net/```

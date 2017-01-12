@@ -26,33 +26,41 @@
 <h1>{{grade}}</h1>
 <ul><li>ddd</li></ul>
 </script>
-
 <script src="http://cdn.bootcss.com/angular.js/1.6.1/angular.js"></script>
 <script>
-  // 1.创建模块
-  var app = angular.module('myApp', []);
-  // 2.创建自定义指令
-  // 第一个参数：指令的名字
-  app.directive('myLi', [function() {
-    //自定义标签的形式也叫做指令,ng-model,ng-cloak是以class样式名的形式来书的,
-    //还可以以注释的形式来书写
-    var obj = {
-      //模板的意思
-      restrict: 'ECMA', // A:attribue,E:element，C:class,M:comment
-      template:  '<ul><li>我叫小明</li></ul>',
-      // templateUrl:'./view.html',//
-      templateUrl: 'temp',
-      //replace:true,//需要提供一个布尔值
-      //transclude:true,//需要提供一个布尔值
-      scope: { //获取自定义指令所在元素的属性值
-        dijiqi: '@term', //表壳dijiqi这个属性会拿到自定义标签指令中属性名为term的属性值,@符号后面跟上属性名。
-        nianji: '@grade',
-        term: '@', //这是简写方式，angualr会寻找属性名为term的属性，并拿到它的值
-        grade: '@'
-      }
+//  创建模型
+var app = angular.module('myApp',[]);
+
+//  创建字定义指令：
+// 也有两个参数:第一个参数是自定义指令的名字
+// 自定义指令名要求：驼峰命名法
+app.directive('myZhiling',[function(){
+    var obj={
+        restrict:'EMCA',// E:element,C:class,M:Comment,A:Atribute
+        //template:'<div>我是小明</div>',
+        // templateUrl:'./veiw.html',
+        templateUrl:'tmpl',//不要加#号
+        //replace:true,
+        transclude:true,
+        scope:{  //就是可以用来获取自定义指令所在标签的属性值。
+            aaa:'@myclass',//这种方式就可以通过aaa拿到自定义指令所在标签的属性值
+            myclass:'@'// 上面的简写方式:
+        },
+        link:function(scope,element,attributes){
+            //scope参数与controller里的$scope功能类似只不过
+            //这里的scope初始化的属性值只能够在我们的模板中使用,不能够在模板之外的地方使用。
+            scope.name="小明";
+            
+            //element,angular.element
+            console.dir(element);
+            element.on('click',function(){
+                // 在这里可以进行一些dom操作
+            });
+            console.log(attributes);
+        }
     };
     return obj;
-  }]);
+}]);
 </script>
 </body>
 </html>

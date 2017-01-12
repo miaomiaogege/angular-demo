@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>students</title>
+</head>
+<body ng-app="myApp">
+    <div ng-view></div>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-route/angular-route.js"></script>
+    <script>
+        //创建模块
+        var app =angular.module('myApp',['ngRoute']);
+
+        //创建路由
+        app.config(['$routeProvider',function($routeProvider){
+            $routeProvider.when('/students/:name',{
+                controller:'studentsController',
+                template:'<p>{{user.name}},{{user.grade}}</p>'
+            })
+            .otherwise({
+                redirectTo:'/students/lisi'
+            });
+            
+        }]);
+
+        // 创建控制器
+        app.controller('studentsController',[
+            '$scope',
+            '$routeParams',
+            function($scope,$routeParams){
+            $scope.students = {
+            zhangsan: {id: 0, name: "张三", grade: "一年级"},
+            lisi: {id: 1, name: "李四", grade: "一年级"},
+            xiaobai: {id: 2, name: "小白", grade: "一年级"},
+            wangwu: {id: 3, name: "王五", grade: "一年级"},
+            zhaosi: {id: 4, name: "赵四", grade: "一年级"},
+        }
+            console.log($routeParams);
+            var user = $scope.students[$routeParams.name];
+            //console.log(user);
+            if(!user){
+                user=$scope.students['lisi'];
+            }
+            $scope.user=user;
+        }]);
+    </script>
+</body>
+</html>
