@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>自定义指令</title>
+  <style>
+   *{margin: 0;padding: 0}
+    ul{list-style: none}
+  </style>
+</head>
+<body ng-app="myApp">
+<div my-li></div>
+<div class="my-li"></div>
+<!-- directive: my-zhiling -->
+<div></div>
+<div></div>
+<div></div>
+<div></div>  
+<my-li term="test" grade="demo" ></my-li>
+<script id="temp" type="text/ng-template">
+<!-- 利用了浏览器只会解析 type属性为"text/javascript"的script标签的特性 -->
+<!-- <h1 ng-transclude></h1> -->
+<h1>{{dijiqi}}</h1>
+<h1>{{term}}</h1>
+<h1>{{nianji}}</h1>
+<h1>{{grade}}</h1>
+<ul><li>ddd</li></ul>
+</script>
+
+<script src="http://cdn.bootcss.com/angular.js/1.6.1/angular.js"></script>
+<script>
+  // 1.创建模块
+  var app = angular.module('myApp', []);
+  // 2.创建自定义指令
+  // 第一个参数：指令的名字
+  app.directive('myLi', [function() {
+    //自定义标签的形式也叫做指令,ng-model,ng-cloak是以class样式名的形式来书的,
+    //还可以以注释的形式来书写
+    var obj = {
+      //模板的意思
+      restrict: 'ECMA', // A:attribue,E:element，C:class,M:comment
+      template:  '<ul><li>我叫小明</li></ul>',
+      // templateUrl:'./view.html',//
+      templateUrl: 'temp',
+      //replace:true,//需要提供一个布尔值
+      //transclude:true,//需要提供一个布尔值
+      scope: { //获取自定义指令所在元素的属性值
+        dijiqi: '@term', //表壳dijiqi这个属性会拿到自定义标签指令中属性名为term的属性值,@符号后面跟上属性名。
+        nianji: '@grade',
+        term: '@', //这是简写方式，angualr会寻找属性名为term的属性，并拿到它的值
+        grade: '@'
+      }
+    };
+    return obj;
+  }]);
+</script>
+</body>
+</html>

@@ -1,2 +1,0 @@
-# angular-demo
- angular demo 
