@@ -102,8 +102,15 @@
 #### 扩展小知识
 
 - todomvc demo
+
 - track by $index 解决ng-repeat 遍历数组时有重复问题
-- 
+
+- 使用$scope.$apply()通过anuglar监视数据模型的变化。
+    - setInterval()
+    - setTimeout() 
+- $route ,提供一个方法，用于更新路由参数 
+    + $route.updateParams({page:2})//需要传入一个对象：就路由中的参数名及新的参数值;
+
 - 在线编辑器
     + ```http://codepen.io/```
     + ```https://jsfiddle.net/```
