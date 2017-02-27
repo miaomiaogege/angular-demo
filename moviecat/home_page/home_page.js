@@ -30,7 +30,7 @@
     var currIndex = 0;
     $scope.loading=true;
 
-    MyHttp.jsonp('http://api.douban.com/v2/movie/in_theaters',
+    MyHttp.jsonp('https://api.douban.com/v2/movie/in_theaters',
       {start:0,count:10},function(data){
         // console.log(data.subjects);
         var imgs = data.subjects;

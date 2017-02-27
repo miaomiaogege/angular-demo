@@ -27,7 +27,7 @@
         var start = ($scope.page-1)*pageSize;// 从第几条数据开始显示
         $scope.allCount= 0; //总共多少条数据;
         $scope.loading=true;
-        MyHttp.jsonp('http://api.douban.com/v2/movie/'+$routeParams.movietype+'?q='+$routeParams.q,
+        MyHttp.jsonp('https://api.douban.com/v2/movie/'+$routeParams.movietype+'?q='+$routeParams.q,
           {start:start,count:pageSize},function(data){
               // console.log(data);
               $scope.list=data.subjects;

@@ -12,7 +12,7 @@
             'MyHttp',
             function($scope, $location, $routeParams, MyHttp) {
 
-                MyHttp.jsonp('http://api.douban.com/v2/movie/subject/' + $routeParams.id, {}, function(data) {
+                MyHttp.jsonp('https://api.douban.com/v2/movie/subject/' + $routeParams.id, {}, function(data) {
                     // console.log(data);
                     $scope.data = data;
                     $scope.$apply(); // 获取异步更新

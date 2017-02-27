@@ -17,7 +17,7 @@
 <div></div>
 <div></div>  
 <my-li term="test" grade="demo" ></my-li>
-<script id="temp" type="text/ng-template">
+<script id="tmpl" type="text/ng-template">
 <!-- 利用了浏览器只会解析 type属性为"text/javascript"的script标签的特性 -->
 <!-- <h1 ng-transclude></h1> -->
 <h1>{{dijiqi}}</h1>
@@ -26,7 +26,7 @@
 <h1>{{grade}}</h1>
 <ul><li>ddd</li></ul>
 </script>
-<script src="http://cdn.bootcss.com/angular.js/1.6.1/angular.js"></script>
+<script src="node_modules/angular/angular.js"></script>
 <script>
 //  创建模型
 var app = angular.module('myApp',[]);

@@ -115,3 +115,8 @@
     + ```http://codepen.io/```
     + ```https://jsfiddle.net/```
 
+- todomvc demo 
+> ```http://cxyz.oschina.io/angular-demo/todomvc/#!/ ```
+
+- moviecat 
+> ```http://cxyz.oschina.io/angular-demo/moviecat/#/home_page```

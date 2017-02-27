@@ -1,15 +1,18 @@
 {
-  "name": "angularjs",
+  "name": "demo",
   "version": "1.0.0",
-  "description": "angular demo",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "chenio",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
   "dependencies": {
-    "angular": "^1.6.1",
-    "angular-route": "^1.6.1"
+    "angular": "^1.5.3",
+    "angular-ui-router": "^0.3.2",
+    "bootstrap": "^3.3.6",
+    "ui-router": "^1.0.0-alpha.3"
   }
 }
