@@ -120,3 +120,6 @@
 
 - moviecat 
 > ```http://cxyz.oschina.io/angular-demo/moviecat/#/home_page```
+
+### ui-router
+> `https://ui-router.github.io/ng1/tutorial/hellosolarsystem`
