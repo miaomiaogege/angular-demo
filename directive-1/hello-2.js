@@ -6,3 +6,12 @@ myApp.directive('hello',function(){
 		replace:true
 	}
 })
+
+
+// templateUrl  template :
+// 模版中需要有html标签包裹 ： <div>haha...</div>
+
+// templateUrl:'tmpl',
+// <script type='text/ng-template' id='tmpl'>
+//	  <div>haha...</div>
+// </script>	
