@@ -7,7 +7,13 @@ myApp.directive('hello',function(){
 	}
 })
 
-
+myApp.directive('helloDemo',function(){
+	return {
+		restrict:'AE',
+		templateUrl:'tmpl2',
+		replace:true
+	}
+})
 // templateUrl  template :
 // 模版中需要有html标签包裹 ： <div>haha...</div>
 
